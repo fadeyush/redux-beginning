@@ -4,26 +4,15 @@ import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const defaultState = {
-  cash: 0,
-}
-
-const reducer = (state = defaultState, action) => {
-  switch (action.type) {
-    case "ADD_CASH":
-      return {...state, cash: state.cash + action.payload}
-    case "GET_CASH":
-      return {...state, cash: state.cash - action.payload}
-    default:
-      return state;
-  }
-}
-
-const store = createStore(reducer);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <App />
   </Provider>
 );
+
+// Есть dispatch. В него передается action
+// То, как action будет менять состояние - определено внутри reducer
+// Reducer - чистая функция, которая принимает состояние и action и всегда возвращает новый объект состояния
+// Reducer передается в store
+// Store  с помощью провайдера(Provider) передается в react-компоненты
