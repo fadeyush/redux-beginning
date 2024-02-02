@@ -1,3 +1,10 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
+import { cashReducer } from "./cashReducer";
+import { customerReducer } from "./customerReducer";
 
-const store = createStore(reducer);
+const rootReducer = combineReducers({
+    cash: cashReducer,
+    customer: customerReducer
+})
+
+export const store = createStore(rootReducer);

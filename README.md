@@ -5,3 +5,4 @@
 - State, reducer, action
 - useDispatch
 - useSelector
+- combineReducers
