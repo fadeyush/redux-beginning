@@ -20,6 +20,11 @@ function App() {
     }
     dispatch({type: "ADD_CUSTOMER", payload: customer})
   }
+
+  function removeCustomer(customer) {
+    dispatch({type: "REMOVE_CUSTOMER", payload: customer.id})
+  }
+
   console.log(customers)
 
   return (
@@ -28,13 +33,12 @@ function App() {
       <button onClick={()=>addCash(Number(prompt()))}>Пополнить счет</button>
       <button onClick={()=>getCash(Number(prompt()))}>Снять со счета</button>
       <button onClick={()=>addCustomer(prompt())}>Добавить клиента</button>
-      <button onClick={()=>getCash(Number(prompt()))}>Удалить клиента</button>
       <div>
         {
           customers.length > 0 ?
           <div>
             {customers.map(customer =>
-              <div>{customer.name}</div>  
+              <div key={customer.id} onClick={()=>removeCustomer(customer)}>{customer.name}</div>  
             )}
           </div>
           :
