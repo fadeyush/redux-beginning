@@ -3,3 +3,5 @@
 
 ## Рассмотренный и реализованный материал
 - State, reducer, action
+- useDispatch
+- useSelector
