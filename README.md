@@ -6,3 +6,4 @@
 - useDispatch
 - useSelector
 - combineReducers
+- thunk, асинхронные действия
